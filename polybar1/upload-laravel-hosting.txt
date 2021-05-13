@@ -1,0 +1,27 @@
+config/filesystems.php
+
+'uploads' => [
+        'driver' => 'local',
+        'root' => base_path('storage'),
+        'visibility' => 'public',
+    ],
+	
+	config/lfm.php
+
+Find:
+
+'disk' => 'uploads',
+
+app->provider->appservice
+public function register()
+    {
+        $this->app->bind('path.public', function() {
+          return base_path().'/';
+        });
+    }
+	
+	move add public to /
+	
+	server.php remove public
+	
+	index.php remove /..
